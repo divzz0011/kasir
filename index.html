@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Kasir</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login Aplikasi Kasir</h2>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="login()">Login</button>
+    <p>Admin: admin / admin123<br>Kasir: kasir / kasir123</p>
+  </div>
+
+  <script>
+    function login() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+
+      if ((user === "admin" && pass === "admin123") || (user === "kasir" && pass === "kasir123")) {
+        localStorage.setItem("userRole", user);
+        window.location.href = "login.html";
+      } else {
+        alert("Username atau password salah.");
+      }
+    }
+  </script>
+  <footer>© 2025 Divzz</footer>
+</body>
+</html>
